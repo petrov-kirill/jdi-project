@@ -8,7 +8,7 @@ import com.epam.jdiproject.site.pages.shared.sections.Header;
 import com.epam.jdiproject.site.pages.personal.index_page.IndexPage;
 import com.epam.jdiproject.site.pages.personal.metal_color_page.MetalsColorsPage;
 
-@JSite(domain = "https://jdi-framework.github.io/tests/")
+@JSite("https://jdi-framework.github.io/tests/")
 public class EpamSite extends WebSite {
 
     @JPage(url = "index.htm", title = "Index Page")

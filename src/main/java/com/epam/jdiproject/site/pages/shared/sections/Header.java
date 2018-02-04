@@ -11,6 +11,7 @@ import static com.epam.jdiproject.enums.Users.PITER_CHAILOVSKII;
 import static org.testng.Assert.assertEquals;
 
 public class Header extends Section {
+
     @FindBy(css = ".profile-photo")
     private Button userName;
 

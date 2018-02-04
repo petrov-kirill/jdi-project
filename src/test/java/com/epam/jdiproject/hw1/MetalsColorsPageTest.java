@@ -31,15 +31,10 @@ public class MetalsColorsPageTest extends InitTests {
         //3 check radio buttons
         metalsColorsPage.summarySection.checkSummaryFormRadios();
 
-        //4 check elements
-        metalsColorsPage.elementsSection.checkElements();
+        //4 check elements, select color, metal and vegetables
+        metalsColorsPage.elementsAndDropdownsSection.checkAndSelectElements();
 
-
-
-        try {
-            Thread.currentThread().sleep(2222);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        //5 verify results
+        metalsColorsPage.resultSection.verifyResults();
     }
 }
