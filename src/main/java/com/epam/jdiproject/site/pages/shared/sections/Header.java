@@ -21,6 +21,7 @@ public class Header extends Section {
     @FindBy(css = ".profile-photo")
     private Button profilePhoto;
 
+    // TODO name of this class is not really good
     private Login loginForm;
 
     @Step

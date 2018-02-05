@@ -8,6 +8,11 @@
     <artifactId>jdi-project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!--ADD .gitignore !-->
+    <!--ADD .gitignore !-->
+    <!--ADD .gitignore !-->
+    <!--ADD .gitignore !-->
+
     <dependencies>
         <dependency>
             <groupId>com.epam.jdi</groupId>

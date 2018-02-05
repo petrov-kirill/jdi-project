@@ -18,6 +18,10 @@ public class ResultSection extends Section {
 
     @Step
     public void verifyResults() {
+        // TODO what what what ??
+        // TODO you just get the results from the Site and compare it with ... the results from the Site
+        // TODO you should remember the Entity(expected) that has been used to submitting form
+        // TODO and compare it with the results from the Site (actual)
         Set<String> set1 = new HashSet<>();
         for (int i = 0; i < ResultSectionData.results.length; i++) {
             set1.add(resultsArea.getText(i));
