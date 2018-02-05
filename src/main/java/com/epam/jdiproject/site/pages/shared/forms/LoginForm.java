@@ -6,7 +6,7 @@ import com.epam.jdi.uitests.web.selenium.elements.composite.Form;
 import com.epam.jdiproject.entities.User;
 import org.openqa.selenium.support.FindBy;
 
-public class Login extends Form<User> {
+public class LoginForm extends Form<User> {
     @FindBy(css = "#Login")
     private TextField login;
 

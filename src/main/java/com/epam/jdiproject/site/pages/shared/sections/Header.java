@@ -3,7 +3,7 @@ package com.epam.jdiproject.site.pages.shared.sections;
 import com.epam.jdi.uitests.web.selenium.elements.common.Button;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Section;
 import com.epam.jdiproject.entities.User;
-import com.epam.jdiproject.site.pages.shared.forms.Login;
+import com.epam.jdiproject.site.pages.shared.forms.LoginForm;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
 
@@ -21,12 +21,12 @@ public class Header extends Section {
     @FindBy(css = ".profile-photo")
     private Button profilePhoto;
 
-    private Login loginForm;
+    private LoginForm loginFormForm;
 
     @Step
     public void performLogin() {
         profilePhoto.click();
-        loginForm.loginAs(new User(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password));
+        loginFormForm.loginAs(new User(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password));
     }
 
     @Step

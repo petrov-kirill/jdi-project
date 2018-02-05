@@ -18,12 +18,12 @@ public class ResultSection extends Section {
 
     @Step
     public void verifyResults() {
-        Set<String> set1 = new HashSet<>();
+        Set<String> set = new HashSet<>();
         for (int i = 0; i < ResultSectionData.results.length; i++) {
-            set1.add(resultsArea.getText(i));
+            set.add(resultsArea.getText(i));
         }
-        for (int i = 0; i < set1.size(); i++) {
-            assertTrue(set1.contains(resultsArea.getText(i)));
+        for (int i = 0; i < set.size(); i++) {
+            assertTrue(set.contains(ResultSectionData.results[i].text));
         }
     }
 }
