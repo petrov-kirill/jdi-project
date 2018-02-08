@@ -24,17 +24,23 @@ public class MetalsColorsPageTest extends InitTests {
     @Test
     public void verifyElementsBehaviour() {
         //1 perform and verify login
+        // TODO it is not really essential to use ENUM and Class, make your choice. Use both of them is not make a sense
         EpamSite.indexPage.headerSection.performLogin(new User(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password));
 
         //2 open and check is MetalsColorsPage opened
+        // TODO you should open pages by Menu class from JDI framework
         EpamSite.indexPage.headerSection.openMetalsColorsPage();
 
+        // TODO same comments, nothing changed.
+        // TODO take a look on Test steps carefully...
         //3 check radio buttons
         EpamSite.metalsColorsPage.summarySection.checkSummaryFormRadios(new SummaryFormData());
 
         //4 check elements, select color, metal and vegetables
         EpamSite.metalsColorsPage.elementsAndDropdownsSection.checkAndSelectElements(new ElementsAndDropdownsFormData());
+        // !TODO
 
+        // TODO what the point ??? You should REMEMBER the data that has been used for filling form !!!
         //5 verify results
         EpamSite.metalsColorsPage.resultSection.verifyResults(new ResultSectionData());
     }

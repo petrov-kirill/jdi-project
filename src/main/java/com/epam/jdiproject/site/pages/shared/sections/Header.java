@@ -25,6 +25,8 @@ public class Header extends Section {
     private LoginForm loginFormForm;
 
 
+    // TODO NO !! You pass the USER here, you have to work with it only !!
+    // TODO this method will not working at all in case if you pass other User...
     @Step
     public void performLogin(User user) {
         profilePhoto.click();

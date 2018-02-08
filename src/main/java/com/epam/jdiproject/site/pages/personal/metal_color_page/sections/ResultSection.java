@@ -18,10 +18,15 @@ public class ResultSection extends Section {
 
     @Step
     public void verifyResults(ResultSectionData data) {
+        // TODO TextList has a method that allow you to get List of the results at once
+        // TODO what is the point to use Set ?
         Set<String> set = new HashSet<>();
         for (int i = 0; i < data.results.length; i++) {
             set.add(resultsArea.getText(i));
         }
+
+        // TODO what happened if we have a different size of the set and data.results ?
+        // TODO as far as you know, in 8 hw we have a lot of data, thi approach might be useless...
         for (int i = 0; i < set.size(); i++) {
             assertTrue(set.contains(data.results[i].text));
         }
