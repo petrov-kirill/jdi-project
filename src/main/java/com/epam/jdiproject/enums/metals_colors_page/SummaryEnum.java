@@ -1,5 +1,6 @@
 package com.epam.jdiproject.enums.metals_colors_page;
 
+// TODO great !! Why did you do this enum ? Integer::toString is not enough ?
 public enum SummaryEnum {
     ONE("1"),
     TWO("2"),

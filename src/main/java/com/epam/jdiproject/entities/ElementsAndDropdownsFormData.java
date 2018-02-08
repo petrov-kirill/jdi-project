@@ -12,8 +12,8 @@ import static com.epam.jdiproject.enums.metals_colors_page.Vegetables.CUCUMBER;
 import static com.epam.jdiproject.enums.metals_colors_page.Vegetables.TOMATO;
 
 public class ElementsAndDropdownsFormData extends DataClass {
-    public static Elements[] elementsList = {WATER, FIRE};
-    public static Vegetables[] vegetablesList = {CUCUMBER, TOMATO};
-    public static String colorsDropdown = RED.text;
-    public static String metalsDropdown = SELEN.text;
+    public Elements[] elementsList = {WATER, FIRE};
+    public Vegetables[] vegetablesList = {CUCUMBER, TOMATO};
+    public String colorsDropdown = RED.text;
+    public String metalsDropdown = SELEN.text;
 }

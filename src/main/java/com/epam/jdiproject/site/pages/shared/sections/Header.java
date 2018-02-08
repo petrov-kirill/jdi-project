@@ -3,11 +3,12 @@ package com.epam.jdiproject.site.pages.shared.sections;
 import com.epam.jdi.uitests.web.selenium.elements.common.Button;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Section;
 import com.epam.jdiproject.entities.User;
-import com.epam.jdiproject.site.pages.shared.forms.Login;
+import com.epam.jdiproject.site.pages.shared.forms.LoginForm;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.epam.jdiproject.enums.Users.PITER_CHAILOVSKII;
+import static com.epam.jdiproject.site.EpamSite.metalsColorsPage;
 import static org.testng.Assert.assertEquals;
 
 public class Header extends Section {
@@ -21,22 +22,21 @@ public class Header extends Section {
     @FindBy(css = ".profile-photo")
     private Button profilePhoto;
 
-    // TODO name of this class is not really good
-    private Login loginForm;
+    private LoginForm loginFormForm;
 
+
+    // TODO NO !! You pass the USER here, you have to work with it only !!
+    // TODO this method will not working at all in case if you pass other User...
     @Step
-    public void performLogin() {
+    public void performLogin(User user) {
         profilePhoto.click();
-        loginForm.loginAs(new User(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password));
-    }
-
-    @Step
-    public void verifyUserName() {
+        loginFormForm.loginAs(user);
         assertEquals(PITER_CHAILOVSKII.fullName, userName.getText());
     }
 
     @Step
     public void openMetalsColorsPage() {
         metalsAndColorsButton.click();
+        metalsColorsPage.checkOpened();
     }
 }

@@ -10,12 +10,12 @@ public class ElementsAndDropdownsSection extends Section {
     ElementsAndDropdownsForm elementsAndDropdownsForm;
 
     @Step
-    public void checkAndSelectElements() {
-        elementsAndDropdownsForm.checkAndVerifyElements();
-        elementsAndDropdownsForm.selectColor();
-        elementsAndDropdownsForm.selectMetal();
-        elementsAndDropdownsForm.selectVegetables();
-        elementsAndDropdownsForm.submit(new ElementsAndDropdownsFormData());
+    public void checkAndSelectElements(ElementsAndDropdownsFormData data) {
+        elementsAndDropdownsForm.checkAndVerifyElements(data);
+        elementsAndDropdownsForm.selectColor(data);
+        elementsAndDropdownsForm.selectMetal(data);
+        elementsAndDropdownsForm.selectVegetables(data);
+        elementsAndDropdownsForm.submit(data);
     }
 
 }

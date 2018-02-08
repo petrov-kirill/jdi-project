@@ -17,17 +17,18 @@ public class ResultSection extends Section {
     private TextList resultsArea;
 
     @Step
-    public void verifyResults() {
-        // TODO what what what ??
-        // TODO you just get the results from the Site and compare it with ... the results from the Site
-        // TODO you should remember the Entity(expected) that has been used to submitting form
-        // TODO and compare it with the results from the Site (actual)
-        Set<String> set1 = new HashSet<>();
-        for (int i = 0; i < ResultSectionData.results.length; i++) {
-            set1.add(resultsArea.getText(i));
+    public void verifyResults(ResultSectionData data) {
+        // TODO TextList has a method that allow you to get List of the results at once
+        // TODO what is the point to use Set ?
+        Set<String> set = new HashSet<>();
+        for (int i = 0; i < data.results.length; i++) {
+            set.add(resultsArea.getText(i));
         }
-        for (int i = 0; i < set1.size(); i++) {
-            assertTrue(set1.contains(resultsArea.getText(i)));
+
+        // TODO what happened if we have a different size of the set and data.results ?
+        // TODO as far as you know, in 8 hw we have a lot of data, thi approach might be useless...
+        for (int i = 0; i < set.size(); i++) {
+            assertTrue(set.contains(data.results[i].text));
         }
     }
 }

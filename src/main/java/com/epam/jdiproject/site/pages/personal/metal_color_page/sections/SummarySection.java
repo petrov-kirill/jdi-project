@@ -11,12 +11,7 @@ public class SummarySection extends Section {
     SummaryForm summaryForm;
 
     @Step
-    public void checkSummaryFormRadios() {
-        summaryForm.submit(new SummaryFormData());
+    public void checkSummaryFormRadios(SummaryFormData data) {
+        summaryForm.submit(data);
     }
-
-    @Step
-    public void verifySummaryFormRadios() {
-    }
-
 }

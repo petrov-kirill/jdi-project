@@ -26,12 +26,6 @@ public class ElementsAndDropdownsForm extends Form<ElementsAndDropdownsFormData>
     )
     private Dropdown colorsDropdown;
 
-//    @JDropdown(jroot = @JFindBy(css = ".metals"),
-//            jlist = @JFindBy(css = "li"),
-//            jvalue = @JFindBy(css = ".filter-option")
-//    )
-//    private Dropdown metalsDropdown;
-
     @FindBy(css = "[type='text']")
     private TextField metalsDropdown;
 
@@ -45,26 +39,26 @@ public class ElementsAndDropdownsForm extends Form<ElementsAndDropdownsFormData>
     private Button submitButton;
 
     @Step
-    public void checkAndVerifyElements() {
-        elementsList.check(ElementsAndDropdownsFormData.elementsList);
+    public void checkAndVerifyElements(ElementsAndDropdownsFormData data) {
+        elementsList.check(data.elementsList);
         elementsList.isSelected(FIRE.text);
         elementsList.isSelected(WATER.text);
     }
 
     @Step
-    public void selectColor() {
-        colorsDropdown.select(ElementsAndDropdownsFormData.colorsDropdown);
+    public void selectColor(ElementsAndDropdownsFormData data) {
+        colorsDropdown.select(data.colorsDropdown);
     }
 
     @Step
-    public void selectMetal() {
-        metalsDropdown.newInput(ElementsAndDropdownsFormData.metalsDropdown);
+    public void selectMetal(ElementsAndDropdownsFormData data) {
+        metalsDropdown.newInput(data.metalsDropdown);
     }
 
     @Step
-    public void selectVegetables() {
+    public void selectVegetables(ElementsAndDropdownsFormData data) {
         vegetablesButton.click();
-        vegetables.check(ElementsAndDropdownsFormData.vegetablesList);
+        vegetables.check(data.vegetablesList);
         vegetables.check(SALAD.text);
         vegetables.isSelected(TOMATO.text);
         vegetables.isSelected(CUCUMBER.text);
