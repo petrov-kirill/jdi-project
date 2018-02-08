@@ -17,13 +17,13 @@ public class ResultSection extends Section {
     private TextList resultsArea;
 
     @Step
-    public void verifyResults() {
+    public void verifyResults(ResultSectionData data) {
         Set<String> set = new HashSet<>();
-        for (int i = 0; i < ResultSectionData.results.length; i++) {
+        for (int i = 0; i < data.results.length; i++) {
             set.add(resultsArea.getText(i));
         }
         for (int i = 0; i < set.size(); i++) {
-            assertTrue(set.contains(ResultSectionData.results[i].text));
+            assertTrue(set.contains(data.results[i].text));
         }
     }
 }

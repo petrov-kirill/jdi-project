@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.epam.jdiproject.enums.Users.PITER_CHAILOVSKII;
+import static com.epam.jdiproject.site.EpamSite.metalsColorsPage;
 import static org.testng.Assert.assertEquals;
 
 public class Header extends Section {
@@ -23,19 +24,17 @@ public class Header extends Section {
 
     private LoginForm loginFormForm;
 
-    @Step
-    public void performLogin() {
-        profilePhoto.click();
-        loginFormForm.loginAs(new User(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password));
-    }
 
     @Step
-    public void verifyUserName() {
+    public void performLogin(User user) {
+        profilePhoto.click();
+        loginFormForm.loginAs(user);
         assertEquals(PITER_CHAILOVSKII.fullName, userName.getText());
     }
 
     @Step
     public void openMetalsColorsPage() {
         metalsAndColorsButton.click();
+        metalsColorsPage.checkOpened();
     }
 }

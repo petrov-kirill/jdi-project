@@ -16,6 +16,4 @@ public class EpamSite extends WebSite {
 
     @JPage(url = "page2.htm", title = "Metal and Colors")
     public static MetalsColorsPage metalsColorsPage;
-
-    public static Header header;
 }
