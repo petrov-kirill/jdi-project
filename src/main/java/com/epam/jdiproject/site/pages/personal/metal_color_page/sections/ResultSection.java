@@ -9,6 +9,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 import java.util.HashSet;
 import java.util.Set;
 
+import static com.epam.web.matcher.testng.Assert.assertEquals;
 import static com.epam.web.matcher.testng.Assert.assertTrue;
 
 public class ResultSection extends Section {
@@ -18,12 +19,8 @@ public class ResultSection extends Section {
 
     @Step
     public void verifyResults(ResultSectionData data) {
-        Set<String> set = new HashSet<>();
         for (int i = 0; i < data.results.length; i++) {
-            set.add(resultsArea.getText(i));
-        }
-        for (int i = 0; i < set.size(); i++) {
-            assertTrue(set.contains(data.results[i].text));
+            assertEquals(data.results[i].text, resultsArea.getTextList().get(i));
         }
     }
 }

@@ -23,8 +23,8 @@ public class MetalsColorsPageTest extends InitTests {
 
     @Test
     public void verifyElementsBehaviour() {
-        //1 perform and verify login
-        EpamSite.indexPage.headerSection.performLogin(new User(PITER_CHAILOVSKII.login, PITER_CHAILOVSKII.password));
+        //1 perform login
+        EpamSite.indexPage.headerSection.performLogin(PITER_CHAILOVSKII);
 
         //2 open and check is MetalsColorsPage opened
         EpamSite.indexPage.headerSection.openMetalsColorsPage();

@@ -5,7 +5,6 @@ import com.epam.jdi.uitests.web.selenium.elements.complex.RadioButtons;
 import com.epam.jdi.uitests.web.selenium.elements.composite.Form;
 import com.epam.jdiproject.entities.SummaryFormData;
 import org.openqa.selenium.support.FindBy;
-import ru.yandex.qatools.allure.annotations.Step;
 
 public class SummaryForm extends Form<SummaryFormData> {
 

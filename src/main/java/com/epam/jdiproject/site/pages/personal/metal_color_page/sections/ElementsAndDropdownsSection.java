@@ -17,5 +17,4 @@ public class ElementsAndDropdownsSection extends Section {
         elementsAndDropdownsForm.selectVegetables(data);
         elementsAndDropdownsForm.submit(data);
     }
-
 }
