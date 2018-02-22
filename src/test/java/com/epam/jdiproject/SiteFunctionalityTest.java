@@ -1,7 +1,12 @@
 package com.epam.jdiproject;
 
+import com.epam.jdiproject.entities.MetalsColorsData;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.io.FileNotFoundException;
 
 import static com.epam.jdiproject.EpamSite.homePage;
 import static com.epam.jdiproject.EpamSite.metalsColorsPage;
@@ -16,8 +21,18 @@ public class SiteFunctionalityTest extends SetupTests {
         homePage.checkOpened();
     }
 
-    @Test
-    public void metalsColorsPageTest() {
+    @AfterMethod
+    public void tearDown() {
+        metalsColorsPage.headerSection.logout();
+    }
+
+    @DataProvider
+    public Object[] getData() throws FileNotFoundException {
+        return new DataParser().data;
+    }
+
+    @Test(dataProvider = "getData")
+    public void metalsColorsPageTest(MetalsColorsData jsonData) {
 
         //1 Login as Piter Chailovskii
         homePage.headerSection.login(PITER_CHAILOVSKII);
@@ -26,5 +41,7 @@ public class SiteFunctionalityTest extends SetupTests {
         homePage.headerSection.headerMenu.selectHeaderOption(METALS_COLORS);
         metalsColorsPage.checkOpened();
 
+        //3 Fill in Metals Colors form with data
+        metalsColorsPage.metalsColorsForm.fillMetalsColorsForm(jsonData);
     }
 }
