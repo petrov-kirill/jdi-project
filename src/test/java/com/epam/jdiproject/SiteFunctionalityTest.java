@@ -43,5 +43,8 @@ public class SiteFunctionalityTest extends SetupTests {
 
         //3 Fill in Metals Colors form with data
         metalsColorsPage.metalsColorsForm.fillMetalsColorsForm(jsonData);
+
+        //4 Check our results
+        metalsColorsPage.metalsColorsSection.verifyResults(jsonData);
     }
 }
