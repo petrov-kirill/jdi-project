@@ -5,7 +5,7 @@ import com.epam.jdiproject.enums.HeaderMenuOptionsEnum;
 
 public class HeaderMenu extends Menu{
 
-    public void mySelection(HeaderMenuOptionsEnum option) {
+    public void selectHeaderOption(HeaderMenuOptionsEnum option) {
         super.select(option.toString());
     }
 }
